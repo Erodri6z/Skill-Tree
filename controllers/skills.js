@@ -24,8 +24,22 @@ function create(req, res) {
     res.redirect('/skills')
   })
 }
-
+function show(req, res) {
+  Skill.findById(req.params.id)
+  .then(skill => {
+    console.log(skill)
+    res.render('skills/show', {
+      skill,
+      title: 'Skill details'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
 export {
   index,
-  create
+  create,
+  show
 }

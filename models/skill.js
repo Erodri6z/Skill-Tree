@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const skillsSchema = new Schema({
   name: String,
-  experienceLevel: String,
+  experience: String,
   description: String,
 })
 
