@@ -1,0 +1,33 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<main>
+  <h1>Welcome! Share a skill or be inspired to learn a new one!</h1>
+  <% if (user) { %>
+    <h2>Share a Skill!</h2>
+    <form action="/skills" method="post">
+      <label>
+        Name of Skill:
+        <input type="text" name="skillName" autocomplete="off">
+      </label>
+      <label>
+        Description
+        <input type="text" name="description" id="description">
+      </label>
+      <label>
+        Experience:
+        <select name="experience" id="experience">
+        <option value="less than 1 year">1 year or less</option>
+        <option value="1-2 years">1-2 years</option>
+        <option value="2-3 years">2-3 years</option>
+        <option value="3+ years">3+ years</option>
+        </select>
+      </label>
+      <button type="submit">Share</button>
+    </form>
+
+  <% } %>
+
+</main>
+
+
+<%- include('../partials/footer') %>

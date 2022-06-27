@@ -68,7 +68,7 @@ app.use(passUserToView)
 // router middleware
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
-app.use('/skills',skillRouter)
+app.use('/skills', skillRouter)
 
 
 
