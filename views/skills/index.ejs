@@ -2,16 +2,16 @@
 <%- include('../partials/nav') %>
 <main>
   <h1>Welcome! Share a skill or be inspired to learn a new one!</h1>
-  <% if (user) { %>
+  
     <h2>Share a Skill!</h2>
-    <form action="/skills" method="post">
+    <form action="/skills" method="POST">
       <label>
         Name of Skill:
-        <input type="text" name="skillName" autocomplete="off">
+        <input type="text" name="name" autocomplete="off">
       </label>
       <label>
         Description
-        <input type="text" name="description" id="description">
+        <input type="text" name="description" id="description" autocomplete="off">
       </label>
       <label>
         Experience:
@@ -25,7 +25,13 @@
       <button type="submit">Share</button>
     </form>
 
-  <% } %>
+    <ul>
+    <% skills.forEach(skill => { %>
+      <li>
+        <%= skill.name %> 
+      </li>
+      <% }) %>
+    </ul>
 
 </main>
 

@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const skillsSchema = new Schema({
-  skillName: String,
+  name: String,
   experienceLevel: String,
   description: String,
 })

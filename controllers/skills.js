@@ -5,7 +5,7 @@ function index(req, res) {
   .then(skills => {
     res.render('skills/index', {
       skills,
-      title : 'skills'
+      title: 'Skills'
     })
   })
   .catch(err => {
@@ -14,8 +14,7 @@ function index(req, res) {
   })
 }
 
-function create(req, res){
-  req.body.owner = req.user.profile._id
+function create(req, res) {
   Skill.create(req.body)
   .then(skill => {
     res.redirect('/skills')
