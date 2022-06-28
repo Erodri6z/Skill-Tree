@@ -49,10 +49,29 @@ function createComment(req, res) {
       res.redirect(`/skills/${skill._id}`)
     })
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function edit(req, res) {
+  Skill.findById(req.params.id)
+  .then(skill => {
+    res.render('skills/edit', {
+      skill,
+      title: 'Edit The Talent'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/skills')
+  })
 }
 export {
   index,
   create,
   show,
-  createComment
+  createComment,
+  edit
 }

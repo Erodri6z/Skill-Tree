@@ -1,0 +1,36 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<form action="/skills/<%= skill._id %>?_method=PUT" method="POST">
+  <label>
+    Name of Skill:
+    <input 
+    type="text" 
+    name="name" 
+    value="<% skill.name %>" 
+    autocomplete="off">
+  </label>
+  <label>
+    Description
+    <input type="text" 
+    name="description" 
+    id="description" 
+    value="<% skill.description %>"
+    autocomplete="off">
+  </label>
+  <label>
+    Experience:
+    <select name="experience"
+    value="<% skill.experience %>"
+    id="experience">
+    <option value="less than 1 year">1 year or less</option>
+    <option value="1-2 years">1-2 years</option>
+    <option value="2-3 years">2-3 years</option>
+    <option value="3+ years">3+ years</option>
+    </select>
+  </label>
+  <button type="submit">Edit the Details</button>
+</form>
+
+
+<%- include('../partials/footer') %>

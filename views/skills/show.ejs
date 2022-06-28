@@ -3,6 +3,9 @@
 <h1><%= skill.name %></h1>
 <h2><%= skill.experience %></h2>
 <h2><%= skill.description %></h2>
+<form action="/skills/<%= skill._id %>/edit">
+  <button type="submit">Edit</button>
+</form>
 
 <h3>Leave a comment!</h3>
 <form action="/skills/<%= skill._id %>" method="POST">
