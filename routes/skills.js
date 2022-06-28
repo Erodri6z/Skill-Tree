@@ -8,6 +8,8 @@ router.get('/', skillsCtrl.index)
 
 router.get('/:id', skillsCtrl.show)
 
+router.post('/:id', skillsCtrl.createComment)
+
 router.post('/', skillsCtrl.create)
 
 

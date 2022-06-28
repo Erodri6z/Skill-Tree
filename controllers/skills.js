@@ -38,8 +38,21 @@ function show(req, res) {
     res.redirect('/')
   })
 }
+
+function createComment(req, res) {
+  Skill.findById(req.params.id)
+  .then(skill =>{
+    skill.comment.push(req.body)
+    console.log(req.body)
+    skill.save()
+    .then(()=> {
+      res.redirect(`/skills/${skill._id}`)
+    })
+  })
+}
 export {
   index,
   create,
-  show
+  show,
+  createComment
 }
