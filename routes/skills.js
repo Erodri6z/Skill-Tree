@@ -14,6 +14,8 @@ router.post('/:id', skillsCtrl.createComment)
 
 router.post('/', skillsCtrl.create)
 
+router.put('/:id', skillsCtrl.update)
+
 
 
 export{

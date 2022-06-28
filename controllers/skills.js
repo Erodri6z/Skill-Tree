@@ -68,10 +68,23 @@ function edit(req, res) {
     res.redirect('/skills')
   })
 }
+
+function update(req, res) {
+  Skill.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(skill =>{
+    console.log(skill)
+    res.redirect(`/skills/${skill._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/skills')
+  })
+}
 export {
   index,
   create,
   show,
   createComment,
-  edit
+  edit,
+  update
 }
