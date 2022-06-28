@@ -1,4 +1,5 @@
 import { Skill } from '../models/skill.js'
+import { Profile } from '../models/profile.js'
 
 function index(req, res) {
   Skill.find({})
