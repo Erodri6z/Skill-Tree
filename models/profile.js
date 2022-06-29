@@ -1,10 +1,10 @@
 import mongoose from 'mongoose'
 
+const Schema = mongoose.Schema
 
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
-  skills: [{type: mongoose.Schema.Types.ObjectId, ref: 'Skill'}]
 }, {
   timestamps: true
 })

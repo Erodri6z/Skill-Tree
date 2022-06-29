@@ -12,7 +12,8 @@ const skillsSchema = new Schema({
   name: String,
   experience: String,
   description: String,
-  comment:[commentSchema]
+  owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
+  comment:[commentSchema],
 })
 
 const Skill = mongoose.model('Skill', skillsSchema)

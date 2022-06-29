@@ -16,6 +16,7 @@ function index(req, res) {
 }
 
 function create(req, res) {
+  req.body.owner = req.user.profile.id
   Skill.create(req.body)
   .then(skill => {
     res.redirect('/skills')
@@ -27,6 +28,7 @@ function create(req, res) {
 }
 function show(req, res) {
   Skill.findById(req.params.id)
+  .populate('owner')
   .then(skill => {
     console.log(skill)
     res.render('skills/show', {
