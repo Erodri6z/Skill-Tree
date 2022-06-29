@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+
+<%- include('../partials/nav') %>
+
+<div>
+  <img
+    src="<%= user.profile.avatar %>"
+    alt="<%= user.profile.name %> avatar"
+  />
+<h1><%= profile.name %></h1>
+</div>
+<div>
+  <h2>Skills</h2>
+  <ul>
+      <% skill.forEach(skill => { %>
+        <li>
+          <%= skill.names %>
+        </li>
+      <% }) %>
+  </ul>
+</div>
+
+<%- include('../partials/footer') %>
