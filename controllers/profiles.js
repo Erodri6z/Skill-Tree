@@ -13,12 +13,16 @@ function index(req, res) {
 function show(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
-    const isSelf = profile._id.equals(req.user.profile._id)
-    res.render("profiles/show", {
-      title: `${profile.name}'s profile`,
-      profile,
-      isSelf
-    })
+    Skill.find({})
+    .then(skill => {
+      const isSelf = profile._id.equals(req.user.profile._id)
+      res.render("profiles/show", {
+        title: `${profile.name}'s profile`,
+        skill,
+        profile,
+        isSelf
+      })
+    })  
   })
   .catch(err => {
     console.log(err)
