@@ -10,9 +10,9 @@ router.get('/:id', skillsCtrl.show)
 
 router.get('/:id/edit', skillsCtrl.edit)
 
-router.post('/:id', skillsCtrl.createComment)
+router.post('/:id', isLoggedIn, skillsCtrl.createComment)
 
-router.post('/', skillsCtrl.create)
+router.post('/', isLoggedIn, skillsCtrl.create)
 
 router.delete('/:id', skillsCtrl.delete)
 

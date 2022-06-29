@@ -2,6 +2,7 @@
 <%- include('../partials/nav') %>
 <main>
   <h1>Welcome! Share a skill or be inspired to learn a new one!</h1>
+  <% if (user) { %>
   
     <h2>Share a Skill!</h2>
     <form action="/skills" method="POST">
@@ -32,6 +33,7 @@
       </li>
       <% }) %>
     </ul>
+  <% } %>
 
 </main>
 
