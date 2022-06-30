@@ -25,10 +25,11 @@ body {
 }
 
 nav {
-  background-color: white;
+  background-color: rgb(85, 85, 85);
   font-size: 1.6rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+
 }
 
 main {
@@ -36,6 +37,13 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+#logout{
+  background-color: rgb(200, 0, 0);
+  color: color;
+  border-radius: 80px;
+  border-color: white;
+  border: 2;
 }
 
 h1 {

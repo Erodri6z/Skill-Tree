@@ -2,18 +2,20 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
   <h1>Welcome! Share a skill or be inspired to learn a new one! </h1>
-
-  
+  <% if (user) { %>
+    <h2>Click to log out</h2>
+    <a href="/auth/logout">
+      <button type="submit">Logout</button>
+    </a>
+    <% } else { %>
+      <h2>Please, Log in to begin</h2>
+      <a href="/auth/google" class="siwg-link">
+      <button type="submit" class="siwg">
+        <img id="siwg-image" alt="Sign in with Google" />
+      </button>
+    </a>
+  <% } %>
 </main>
 
 <%- include('./partials/footer') %>

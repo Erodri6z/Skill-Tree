@@ -29,9 +29,11 @@
       </h3>
       </a>
       <%= comment.text %>
+      <% if (skill.owner.equals(user?.profile._id)) { %>
       <form action="/skills/<%= skill._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete</button>
       </form>
+      <% } %>
     </li>
   <% }) %>
 </ul>
