@@ -2,6 +2,7 @@ import { Skill } from '../models/skill.js'
 
 function index(req, res) {
   Skill.find({})
+  .populate('owner')
   .then(skills => {
     res.render('skills/index', {
       skills,

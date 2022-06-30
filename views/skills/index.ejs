@@ -28,9 +28,13 @@
     <% } %>
 
     <ul>
-    <% skills.forEach(skill => { %>
+      <% skills.forEach(skill => { %>
       <li>
-        <a href="/skills/<%= skill._id %>"><%= skill.name %></a> 
+        <h3>
+        <%= skill.owner.name %> is good at
+        <a href="/skills/<%= skill._id %>"><%= skill.name %></a>
+        </h3>
+ 
       </li>
       <% }) %>
     </ul>
