@@ -18,7 +18,6 @@ function index(req, res) {
 function create(req, res) {
   req.body.owner = req.user.profile.id
   Skill.create(req.body)
-  const isSelf = profile._id.equals(req.user.profile._id)
   .then(skill => {
     res.redirect('/skills')
   })
