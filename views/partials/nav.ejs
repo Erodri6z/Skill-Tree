@@ -6,6 +6,9 @@
   <nav>
     <a href="/profiles">Profile</a>
     <% if (user) { %>
+      <a href="/profiles/<%= user.profile._id%>">
+        Me
+      </a>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
