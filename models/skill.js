@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 
 const Schema = mongoose.Schema
 
-const commentSchema = new mongoose.Schema({
+const commentSchema = new Schema({
   text: String,
   author:{type: Schema.Types.ObjectId, ref: 'Profile'}
 }, {
@@ -13,8 +13,8 @@ const skillsSchema = new Schema({
   name: String,
   experience: String,
   description: String,
-  owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
-  comment:[commentSchema],
+  comment: [commentSchema],
+  owner: {type: Schema.Types.ObjectId, ref: 'Profile'}
 })
 
 const Skill = mongoose.model('Skill', skillsSchema)

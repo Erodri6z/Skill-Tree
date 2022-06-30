@@ -14,13 +14,15 @@ router.post('/:id', isLoggedIn, skillsCtrl.createComment)
 
 router.post('/', isLoggedIn, skillsCtrl.create)
 
-router.delete('/:id', skillsCtrl.delete)
+router.delete('/:id',isLoggedIn, skillsCtrl.delete)
+
+router.delete('/:skillId/comments/:commentId', skillsCtrl.deleteComment)
 
 router.put('/:id', skillsCtrl.update)
 
 
 
 
-export{
+export {
   router
 }

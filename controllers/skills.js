@@ -1,7 +1,5 @@
 import { Skill } from '../models/skill.js'
 
-
-
 function index(req, res) {
   Skill.find({})
   .then(skills => {
@@ -96,6 +94,22 @@ function deleteSkill(req, res){
     res.redirect('/skills')
   })
 }
+
+function deleteComment(req, res) {
+  Skill.findById(req.params.skillId)
+  .then(skill => {
+    console.log(skill)
+    skill.comment.remove({_id: req.params.commentId })
+    skill.save()
+    .then(savedSkill => {
+      res.redirect(`/skills/${skill._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/skills`)
+  })
+}
 export {
   index,
   create,
@@ -103,5 +117,6 @@ export {
   createComment,
   edit,
   update,
-  deleteSkill as delete
+  deleteSkill as delete,
+  deleteComment
 }

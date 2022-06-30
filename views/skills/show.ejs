@@ -29,6 +29,9 @@
       </h3>
       </a>
       <%= comment.text %>
+      <form action="/skills/<%= skill._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+      </form>
     </li>
   <% }) %>
 </ul>
