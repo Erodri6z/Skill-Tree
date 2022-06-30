@@ -1,5 +1,6 @@
 import { Skill } from '../models/skill.js'
-import { Profile } from "../models/profile.js"
+
+
 
 function index(req, res) {
   Skill.find({})
@@ -18,6 +19,7 @@ function index(req, res) {
 function create(req, res) {
   req.body.owner = req.user.profile.id
   Skill.create(req.body)
+  const isSelf = profile._id.equals(req.user.profile._id)
   .then(skill => {
     res.redirect('/skills')
   })
@@ -29,12 +31,12 @@ function create(req, res) {
 function show(req, res) {
   Skill.findById(req.params.id)
   .populate('owner')
+  .populate('comment.author')
   .then(skill => {
-    console.log(skill)
-    res.render('skills/show', {
+      res.render('skills/show', {
       skill,
       title: 'Skill details'
-    })
+    })   
   })
   .catch(err => {
     console.log(err)
@@ -45,6 +47,7 @@ function show(req, res) {
 function createComment(req, res) {
   Skill.findById(req.params.id)
   .then(skill =>{
+    req.body.author = req.user.profile
     skill.comment.push(req.body)
     console.log(req.body)
     skill.save()

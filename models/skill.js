@@ -3,7 +3,8 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const commentSchema = new mongoose.Schema({
-  text: String
+  text: String,
+  author:{type: Schema.Types.ObjectId, ref: 'Profile'}
 }, {
   timestamps: true
 })
@@ -19,5 +20,5 @@ const skillsSchema = new Schema({
 const Skill = mongoose.model('Skill', skillsSchema)
 
 export{
-  Skill
+  Skill,
 }

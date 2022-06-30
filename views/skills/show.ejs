@@ -6,12 +6,14 @@
 <h1><%= skill.name %></h1>
 <h2><%= skill.experience %></h2>
 <h2><%= skill.description %></h2>
+<% if (skill.owner.equals(user?.profile._id)) { %>
 <form action="/skills/<%= skill._id %>/edit">
   <button type="submit">Edit</button>
 </form>
 <form action="/skills/<%= skill._id %>?_method=DELETE" method="POST">
   <button type="submit">Delete</button>
 </form>
+<% } %>
 
 <h3>Leave a comment!</h3>
 <form action="/skills/<%= skill._id %>" method="POST">
@@ -21,6 +23,11 @@
 <ul>
   <% skill.comment.forEach(comment => { %>
     <li>
+      <a href="/profiles/<%= comment.author.id %>">
+      <h3>
+        <%= comment.author.name %>
+      </h3>
+      </a>
       <%= comment.text %>
     </li>
   <% }) %>
