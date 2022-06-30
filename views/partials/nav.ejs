@@ -4,14 +4,31 @@
 </head>
 <body>
   <nav>
-    <a href="/profiles">Profile</a>
+    <div>
+      <a href="/profiles">Profile</a>
+    </div>
+    <% if(user) { %>
+      <div>
+        <a href="/profiles/<%= user.profile._id%>">
+          <img
+          id="profile-pic"
+        src="<%= user.profile.avatar %>"
+        alt="<%= user.profile.name %>'s' avatar"
+        />
+      </div>
+    
+    </a>
+    <% } %>
+    <a href="/skills">View Talents</a>
     <% if (user) { %>
-      <a href="/profiles/<%= user.profile._id%>">
-        Me
-      </a>
+      
       <a href="/auth/logout">
         <button type="submit" id="logout">Logout</button>
       </a>
+    <% } else { %>
+      <a href="/">
+        Login
+      </a>
     <% } %>
-    <a href="/skills">View Talents</a>
+    
   </nav>
