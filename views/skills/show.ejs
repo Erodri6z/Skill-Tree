@@ -9,17 +9,18 @@
   <h2><%= skill.description %></h2>
   <% if (skill.owner.equals(user?.profile._id)) { %>
   <form action="/skills/<%= skill._id %>/edit">
-    <button type="submit">Edit</button>
+    <button class="btn" type="submit">Edit</button>
   </form>
+  <br>
   <form action="/skills/<%= skill._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
+    <button class="btn" type="submit">Delete</button>
   </form>
   <% } %>
   <% if (user) { %>
   <h3>Leave a comment!</h3>
   <form action="/skills/<%= skill._id %>" method="POST">
     <input type="text" name="text" autocomplete="off">
-    <button type="submit">Submit</button>
+    <button class="btn" type="submit">Submit</button>
   </form>
   <% } %>
   <h1>Comments:</h1>
@@ -32,11 +33,13 @@
           <%= comment.author.name %>
         </h3>
         </a>
-        <%= comment.text %>
+        <div id="comment">
+          <%= comment.text %>
+        </div>
         <% if (comment.author.equals(user?.profile._id)) { %>
         <form action="/skills/<%= skill._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
           <br>
-          <button type="submit">Delete</button>
+          <button class="btn"  type="submit">Delete</button>
         </form>
         <% } %>
       </li>
