@@ -2,16 +2,17 @@
 
 <%- include('../partials/nav') %>
 
-
+<br>
 <div>
   <img
+    class="profiles"
     src="<%= user.profile.avatar %>"
     alt="<%= user.profile.name %> avatar"
   />
 <h1><%= profile.name %></h1>
 </div>
 <div>
-  <h2>Skills</h2>
+  <h2 id="skills">Skills</h2>
   <ul>
       <% skill.forEach(skill => { %>
         <li>

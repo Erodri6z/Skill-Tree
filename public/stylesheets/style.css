@@ -29,7 +29,7 @@ nav {
   font-size: 1.6rem;
   display: flex;
   justify-content: space-evenly;
-  padding: 20px;
+  padding: 15px;
 
 }
 
@@ -43,8 +43,10 @@ main {
   background-color: rgb(200, 0, 0);
   color: color;
   border-radius: 80px;
+  padding: 5px;
   border-color: solid white;
   border: 2;
+  margin-top: 5px;
 }
 #profile-pic{
   width: 30px;
@@ -57,4 +59,30 @@ h1 {
 
 div{
   text-align: center;
+}
+
+.nav-bar{
+  background-color: cyan;
+  padding-top: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 6px;
+  border-radius: 80px;
+  border-color:azure;
+}
+
+#profile-list{
+  list-style: none;
+}
+
+.profiles{
+  border-radius: 80px;
+}
+
+ul{
+  list-style: none;
+  text-align: left;
+}
+#skills{
+  margin-right: 91%;
 }

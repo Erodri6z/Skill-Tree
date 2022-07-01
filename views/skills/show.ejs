@@ -23,6 +23,7 @@
   </form>
   <% } %>
   <h1>Comments:</h1>
+  <% if (skill.comment.length) { %>
   <ul>
     <% skill.comment.forEach(comment => { %>
       <li>
@@ -32,14 +33,18 @@
         </h3>
         </a>
         <%= comment.text %>
-        <% if (skill.owner.equals(user?.profile._id)) { %>
+        <% if (comment.author.equals(user?.profile._id)) { %>
         <form action="/skills/<%= skill._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+          <br>
           <button type="submit">Delete</button>
         </form>
         <% } %>
       </li>
     <% }) %>
   </ul>
+  <% }else{ %>
+    <h2>No comments yet, be the first!</h2>
+  <% } %>
 </div>
 
 
