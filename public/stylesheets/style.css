@@ -83,12 +83,15 @@ div{
 ul{
   list-style: none;
 }
-.profile-skill{
-  list-style: none;
-  text-align: left;
+
+.profile-skills{
+  margin-right: 90%;
+  font-size: 12px;
+  
 }
 #skills{
-  margin-right: 91%;
+  margin-right: 88%;
+  font-size: 25px;
 }
 
 .btn{
