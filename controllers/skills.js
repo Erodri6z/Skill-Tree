@@ -17,6 +17,9 @@ function index(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile.id
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+	}
   Skill.create(req.body)
   .then(skill => {
     res.redirect('/skills')
