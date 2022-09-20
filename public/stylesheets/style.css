@@ -75,6 +75,15 @@ div{
 
 #profile-list{
   list-style: none;
+  display: flex ;
+  display: grid;
+  grid-template-columns: repeat(3,50vmin);
+  grid-gap:20px
+}
+
+.profile-styles {
+  display: grid;
+  
 }
 
 .profiles{
