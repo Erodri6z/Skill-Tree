@@ -6,8 +6,8 @@
 <div>
   <img
     class="profiles"
-    src="<%= user.profile.avatar %>"
-    alt="<%= user.profile.name %> avatar"
+    src="<%= profile.avatar %>"
+    alt="<%= profile.name %> avatar"
   />
 <h1><%= profile.name %></h1>
 </div>
@@ -15,11 +15,13 @@
   <h2 id="skills">Skills</h2>
   <ul class="profile-skills">
       <% skill.forEach(skill => { %>
+        <% if (profile._id.equals(skill.owner._id)) { %>
         <li>
           <a href="/skills/<%= skill._id %>">
             <%= skill.name %>
           </a>
         </li>
+        <% } %>
       <% }) %>
 
   </ul>
