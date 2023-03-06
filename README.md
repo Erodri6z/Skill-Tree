@@ -4,7 +4,7 @@
 ![ScreenShot](assets/ScreenShot.png)
 ## About:
 
-Skill-Tree is ment to be a motivational tool to make people be more motivated to learn well, a new skill. Deploy here https://erodri6z-skill-tree.herokuapp.com/
+Skill-Tree is ment to be a motivational tool to make people be more motivated to learn well, a new skill. Deploy here https://skilltree.fly.dev
 
 ## Wireframe and Planning
 ![ERD](assets/ERD%20.png)
