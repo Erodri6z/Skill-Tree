@@ -81,13 +81,11 @@ div{
   grid-gap:20px
 }
 
-.profile-styles {
-  display: grid;
-  
-}
+
 
 .profiles{
   border-radius: 80px;
+  border: solid black 4px;
 }
 ul{
   list-style: none;
